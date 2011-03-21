@@ -57,7 +57,7 @@ exports.colourKey = (path, cb) ->
 
 exports.rgb2hex = (r, g, b) ->
   rgb = if arguments.length is 1 then r else [r, g, b]
-  '#' + rgb.map((x) -> (if x < 16 '0' else '') + x.toString(16)).join('')
+  '#' + rgb.map((x) -> (if x < 16 then '0' else '') + x.toString(16)).join('')
 
 exports.hex2rgb = (xs) ->
   xs = xs.slice(1) if xs[0] is '#'
