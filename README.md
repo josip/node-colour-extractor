@@ -48,10 +48,14 @@ The second function, `colourKey`, returns an array with nine colours, where each
 
 `colour-extractor` exports two more utility functions:
 
-    > cd.rgb2hex(100, 10, 12);
-    
-    cd.rgb2hex([44, 44, 44]);
-    cd.hex2rgb('#fff');
+    > ce.rgb2hex(100, 10, 12);
+    '#640a0c'
+    > ce.rgb2hex([44, 44, 44]);
+    '#2c2c2c'
+    > ce.hex2rgb('#ffffff');
+    [255, 255, 255]
+    > ce.hex2rgb('45c092')
+    [69, 192, 146]
 
 ## How it works?
 
