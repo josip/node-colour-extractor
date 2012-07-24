@@ -4,7 +4,7 @@ temp  = require('temp')
 
 MAX_W      = 14
 MIFF_START = 'comment={'
-MIF_END    = '\x0A}\x0A\x0C\x0A'
+MIFF_END    = '\x0A}\x0A\x0C\x0A'
 
 exports.topColours = (sourceFilename, sorted, cb) ->
   img = gm(sourceFilename)
@@ -68,7 +68,7 @@ include = (x, xs) ->
   xs.push(x) if xs.indexOf(x) is -1
   xs
 
-sortByFrequency = ([a, _], [b, _]) ->
+sortByFrequency = ([a, _a2], [b, _b2]) ->
   return -1 if a > b
   return  1 if a < b
   return  0
