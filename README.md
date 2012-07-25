@@ -57,7 +57,7 @@ The second function, `colourKey`, returns an array with nine colours, where each
     > ce.hex2rgb('45c092')
     [69, 192, 146]
 
-## How it works?
+## How does it work?
 
 That's what I'd like to know as well! Anyhow, `colour-extractor` parses GraphicMagick's histogram, tries to detect similar colours and remove ones which appear less frequently than others.
 
