@@ -11,14 +11,17 @@ exports.topColours = (sourceFilename, sorted, cb) ->
   tmpFilename = temp.path({suffix: '.miff'})
   img.size((err, wh) ->
     console.log err if err
+    
     ratio = wh.width/MAX_W
     w2 = wh.width/2
     h2 = wh.height/2
-    img.bitdepth(8)                               # Initial colour reduction, prob. smarter than our 'algorithm'
+    img.noProfile()                               # Removes EXIF data
+       .bitdepth(8)                               # Initial colour reduction, prob. smarter than our 'algorithm'
        .crop(w2, h2, w2/2, w2/2)                  # Center should be the most interesting
        .scale(Math.ceil(wh.height/ratio), MAX_W)  # Scales the image, histogram generation can take some time
        .write('histogram:' + tmpFilename, (err) ->
           console.log err if err
+
           histogram = ''
           miffRS = fs.createReadStream(tmpFilename, {encoding: 'utf8'})
 
@@ -35,10 +38,12 @@ exports.topColours = (sourceFilename, sorted, cb) ->
           miffRS.addListener('close', ->
             fs.unlink(tmpFilename)
 
-            colours = reduceSimilar(histogram.slice(histogram.indexOf(MIFF_START) + MIFF_START.length)
+            histogram_start = histogram.indexOf(MIFF_START) + MIFF_START.length
+            colours = reduceSimilar(clean(histogram.slice(histogram_start)
                                       .split('\n')
                                       .slice(1, -3)
-                                      .map(parseHistogramLine))
+                                      .map(parseHistogramLine)
+                                      ))
             colours = colours.sort(sortByFrequency) if sorted
             cb(colours)
           )
@@ -70,6 +75,13 @@ include = (x, xs) ->
   xs.push(x) if xs.indexOf(x) is -1
   xs
 
+clean = (xs) ->
+  rs = []
+  for x in xs
+    rs.push(x) if x
+
+  rs
+
 sortByFrequency = ([a, _a2], [b, _b2]) ->
   return -1 if a > b
   return  1 if a < b
@@ -87,6 +99,7 @@ Example line:
 ###
 parseHistogramLine = (xs) ->
   xs = xs.trim().split(':')
+  return null if xs.length != 2
   [+xs[0], xs[1].split('(')[1].split(')')[0].split(',').map((x) -> +x.trim())]
 
 # Magic
@@ -104,7 +117,8 @@ reduceSimilar = (xs, r) ->
     maxD = d if d > maxD
     d
 
-  # Geometric mean helps us detecting similar colours appearing at lower frequencies
+  # geometric mean detects similar colours
+  # appearing at lower frequencies
   avgD = Math.sqrt(minD * maxD)
   n = 0
   rs = []
