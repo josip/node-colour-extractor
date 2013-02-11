@@ -11,6 +11,9 @@ Is as simple as with any other Node.js module:
 
 NOTE: `colour-extractor` depends on [gm](http://aheckmann.github.com/gm/) module, which in turn depends on [GraphicsMagick](http://www.graphicsmagick.org).
 
+## Sample
+![sample](http://i.imgur.com/8aWnu5W.png)
+
 ## Usage
 
 `colour-extractor` exports two functions:
@@ -67,3 +70,9 @@ If you happen to know an actual algorithm that deals with this sort of stuff, do
 ## License
 
 colour-extractor is published under MMIT license, please see the LICENSE file for full details.
+
+Photos used in the sample can be downloaded from Flickr:
+
+  * [Title?](http://www.flickr.com/photos/chavals/2941676828)
+  * [nel profondo del blu](http://www.flickr.com/photos/shamballah/2038749488)
+  * [Reykjavík revisited](http://www.flickr.com/photos/giesenbauer/4951425521)
