@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/josip/node-colour-extractor.png)](http://travis-ci.org/josip/node-colour-extractor)
 # colour-extractor
 
 Extract colour palettes from photos using Node.js.
