@@ -15,11 +15,11 @@ NOTE: `colour-extractor` depends on [gm](http://aheckmann.github.com/gm/) module
 `colour-extractor` exports two functions:
 
     ce = require('colour-extractor')
-    ce.extractColours('Photos/Cats/01.jpg', true, function (colours) {
+    ce.topColours('Photos/Cats/01.jpg', true, function (colours) {
       console.log(colours);
     });
 
-`extractColours` function takes three arguments:
+`topColours` function takes three arguments:
 
   * path to your photo,
   * `true` if you'd like the resulting array to be sorted by frequency,
