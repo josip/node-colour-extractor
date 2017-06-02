@@ -10,8 +10,8 @@ exports.topColours = (sourceFilename, sorted, cb) ->
   img = gm(sourceFilename)
   tmpFilename = temp.path({suffix: '.miff'})
   img.size((err, wh) ->
-    console.log err if err
-    
+    return cb(null) if err
+
     ratio = wh.width/MAX_W
     w2 = wh.width/2
     h2 = wh.height/2
@@ -20,7 +20,7 @@ exports.topColours = (sourceFilename, sorted, cb) ->
        .crop(w2, h2, w2/2, w2/2)                  # Center should be the most interesting
        .scale(Math.ceil(wh.height/ratio), MAX_W)  # Scales the image, histogram generation can take some time
        .write('histogram:' + tmpFilename, (err) ->
-          console.log err if err
+          return cb(null) if err
 
           histogram = ''
           miffRS = fs.createReadStream(tmpFilename, {encoding: 'utf8'})
@@ -100,7 +100,12 @@ Example line:
 parseHistogramLine = (xs) ->
   xs = xs.trim().split(':')
   return null if xs.length != 2
-  [+xs[0], xs[1].split('(')[1].split(')')[0].split(',').map((x) -> +x.trim())]
+  parsedHistogramLine = null
+  try
+    parsedHistogramLine = [+xs[0], xs[1].split('(')[1].split(')')[0].split(',').map((x) -> +x.trim())]
+  catch e
+    console.error(e, xs);
+  return parsedHistogramLine
 
 # Magic
 reduceSimilar = (xs, r) ->
