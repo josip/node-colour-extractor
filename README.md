@@ -2,6 +2,8 @@
 
 ---
 
+[![CI](https://github.com/josip/node-colour-extractor/actions/workflows/CI.yml/badge.svg)](https://github.com/josip/node-colour-extractor/actions/workflows/CI.yml)
+
 # colour-extractor
 
 Extracts colour palettes from photos using k-means clustering in LAB color space.
