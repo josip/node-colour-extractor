@@ -1,5 +1,7 @@
 use lab::Lab;
 
+// CIE76 mentions as just noticeable difference (JND) being 2.3.
+// experimentation showed that to be too low of a value.
 const JND: f32 = 2.3 * 2.0;
 pub fn are_colors_similar(color1: &Lab, color2: &Lab) -> bool {
   ciede2000_distance(*color1, *color2) < JND
