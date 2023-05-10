@@ -1,22 +1,68 @@
 {
-  "name": "colour-extractor",
+  "name": "@colour-extractor/colour-extractor",
   "description": "Extract colour palettes from images",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "homepage": "http://github.com/josip/node-colour-extractor",
   "repository": {
     "type": "git",
     "url": "git://github.com/josip/node-colour-extractor.git"
   },
   "author": "Josip Lisec <josip@jlx.cc> (http://jlx.cc)",
-  "main": "lib/colour-extractor.js",
-  "directories": {
-    "lib": "lib"
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "colour-extractor",
+    "triples": {
+      "additional": [
+        "aarch64-apple-darwin",
+        "aarch64-linux-android",
+        "aarch64-unknown-linux-gnu",
+        "aarch64-unknown-linux-musl",
+        "aarch64-pc-windows-msvc",
+        "armv7-unknown-linux-gnueabihf",
+        "x86_64-unknown-linux-musl",
+        "x86_64-unknown-freebsd",
+        "i686-pc-windows-msvc",
+        "armv7-linux-androideabi",
+        "universal-apple-darwin"
+      ]
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.15.2",
+    "ava": "^5.1.1"
+  },
+  "ava": {
+    "timeout": "3m"
   },
   "engines": {
-    "node": ">=0.4"
+    "node": ">= 10"
   },
-  "dependencies": {
-    "gm": ">=0.4.0",
-    "temp": ">=0.4.x"
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "ava",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "packageManager": "yarn@3.5.1",
+  "optionalDependencies": {
+    "@colour-extractor/colour-extractor-win32-x64-msvc": "1.0.0",
+    "@colour-extractor/colour-extractor-darwin-x64": "1.0.0",
+    "@colour-extractor/colour-extractor-linux-x64-gnu": "1.0.0",
+    "@colour-extractor/colour-extractor-darwin-arm64": "1.0.0",
+    "@colour-extractor/colour-extractor-android-arm64": "1.0.0",
+    "@colour-extractor/colour-extractor-linux-arm64-gnu": "1.0.0",
+    "@colour-extractor/colour-extractor-linux-arm64-musl": "1.0.0",
+    "@colour-extractor/colour-extractor-win32-arm64-msvc": "1.0.0",
+    "@colour-extractor/colour-extractor-linux-arm-gnueabihf": "1.0.0",
+    "@colour-extractor/colour-extractor-linux-x64-musl": "1.0.0",
+    "@colour-extractor/colour-extractor-freebsd-x64": "1.0.0",
+    "@colour-extractor/colour-extractor-win32-ia32-msvc": "1.0.0",
+    "@colour-extractor/colour-extractor-android-arm-eabi": "1.0.0",
+    "@colour-extractor/colour-extractor-darwin-universal": "1.0.0"
   }
 }

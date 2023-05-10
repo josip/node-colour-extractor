@@ -1,0 +1,25 @@
+{
+  "name": "@colour-extractor/colour-extractor-linux-arm-gnueabihf",
+  "version": "1.0.0",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm"
+  ],
+  "main": "colour-extractor.linux-arm-gnueabihf.node",
+  "files": [
+    "colour-extractor.linux-arm-gnueabihf.node"
+  ],
+  "description": "Extract colour palettes from images",
+  "author": "Josip Lisec <josip@jlx.cc> (http://jlx.cc)",
+  "homepage": "http://github.com/josip/node-colour-extractor",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/josip/node-colour-extractor.git"
+  }
+}

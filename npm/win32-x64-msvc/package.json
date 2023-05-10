@@ -1,0 +1,25 @@
+{
+  "name": "@colour-extractor/colour-extractor-win32-x64-msvc",
+  "version": "1.0.0",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "colour-extractor.win32-x64-msvc.node",
+  "files": [
+    "colour-extractor.win32-x64-msvc.node"
+  ],
+  "description": "Extract colour palettes from images",
+  "author": "Josip Lisec <josip@jlx.cc> (http://jlx.cc)",
+  "homepage": "http://github.com/josip/node-colour-extractor",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/josip/node-colour-extractor.git"
+  }
+}

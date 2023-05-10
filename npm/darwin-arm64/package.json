@@ -1,0 +1,25 @@
+{
+  "name": "@colour-extractor/colour-extractor-darwin-arm64",
+  "version": "1.0.0",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "main": "colour-extractor.darwin-arm64.node",
+  "files": [
+    "colour-extractor.darwin-arm64.node"
+  ],
+  "description": "Extract colour palettes from images",
+  "author": "Josip Lisec <josip@jlx.cc> (http://jlx.cc)",
+  "homepage": "http://github.com/josip/node-colour-extractor",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/josip/node-colour-extractor.git"
+  }
+}
