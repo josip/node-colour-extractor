@@ -6,7 +6,7 @@
 
 # colour-extractor
 
-Extracts colour palettes from photos using k-means clustering in LAB color space.
+Extracts colour palettes from photos using k-means clustering in LAB colour space.
 
 ![sample 1](./samples/sample1.png)
 ![sample 2](./samples/sample2.png)
@@ -26,12 +26,12 @@ Note: The module contains native Rust libraries. Please open an issue if your pl
 
 ```js
 const { topColours, topHexColours } = require('colour-extractor');
-const colors = await topColours('Photos/Cats/01.jpg');
+const colours = await topColours('Photos/Cats/01.jpg');
 // => [ [158, 64, 75], ... ]
-console.log(colors);
+console.log(colours);
 ```
 
-`topColours` function needs a path to your image (see below for supported formats) and it resolves to an `Array` containing RGB triplet for each prominent color:
+`topColours` function needs a path to your image (see below for supported formats) and it resolves to an `Array` containing RGB triplet for each prominent colour:
 
 ```json
 [
@@ -60,8 +60,8 @@ All major image formats are supported, including PNG, JPG and WebP. Please see [
 Here's the simplified algorithm:
 
 1. Image is scaled down to 48x48px with a fast nearest-neighbour algoritm.
-2. Colors are gruped into up to 16 clusters using [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering).
-3. Identified clusters are further refined using [CIEDE2000 color distance](https://en.wikipedia.org/wiki/Color_difference#CIEDE2000), removing any duplicates.
+2. Colours are gruped into up to 16 clusters using [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering).
+3. Identified clusters are further refined using [CIEDE2000 colour distance](https://en.wikipedia.org/wiki/Color_difference#CIEDE2000), removing any duplicates.
 
 ## License
 
