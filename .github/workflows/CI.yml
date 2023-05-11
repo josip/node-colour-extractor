@@ -460,7 +460,7 @@ jobs:
       - test-linux-x64-gnu-binding
       - test-linux-x64-musl-binding
       - test-linux-aarch64-gnu-binding
-      - test-linux-aarch64-musl-binding
+      # - test-linux-aarch64-musl-binding
       - test-linux-arm-gnueabihf-binding
       - universal-macOS
     steps:
