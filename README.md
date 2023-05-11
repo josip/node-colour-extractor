@@ -18,15 +18,15 @@ Is as simple as with any other Node.js module:
 
     $ npm install @colour-extractor/colour-extractor
 
-Note: The module contains native Rust libraries. Please open an issue if your platform isn't supported.
+Note: This module contains native Rust libraries. Please open an issue if your platform isn't supported.
 
 ## Usage
 
 `colour-extractor` exports two functions:
 
 ```js
-const { topColours } = require('colour-extractor');
-const colours = await topColours('Photos/Cats/01.jpg');
+const { topColours } = require('@colour-extractor/colour-extractor');
+const colours = await topColours('./photos/cats/tigre.jpg');
 console.log(colours);
 // => [ [158, 64, 75], ... ]
 ```
@@ -41,14 +41,13 @@ console.log(colours);
 ]
 ```
 
-`topHexColours` on the other hand returns hex codes (with `#` included):
+`topColoursHex` on the other hand returns hex codes (with `#` included):
 
-```json
-[
-  "#2e4676",
-  "#000002",
-  "#0c2c0b"
-]
+```js
+const { topColoursHex } = require('@colour-extractor/colour-extractor');
+const colours = await topColoursHex('./photos/cats/tigre.jpg');
+console.log(colours);
+// => ["#2e4676", "#000002", "#0c2c0b"]
 ```
 
 ## Supported image formats
