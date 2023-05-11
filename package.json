@@ -1,7 +1,7 @@
 {
   "name": "@colour-extractor/colour-extractor",
   "description": "Extract colour palettes from images",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "http://github.com/josip/node-colour-extractor",
   "repository": "git://github.com/josip/node-colour-extractor.git",
   "author": "Josip Lisec <josip@jlx.cc> (http://jlx.cc)",
