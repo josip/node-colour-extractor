@@ -25,10 +25,10 @@ Note: The module contains native Rust libraries. Please open an issue if your pl
 `colour-extractor` exports two functions:
 
 ```js
-const { topColours, topHexColours } = require('colour-extractor');
+const { topColours } = require('colour-extractor');
 const colours = await topColours('Photos/Cats/01.jpg');
-// => [ [158, 64, 75], ... ]
 console.log(colours);
+// => [ [158, 64, 75], ... ]
 ```
 
 `topColours` function needs a path to your image (see below for supported formats) and it resolves to an `Array` containing RGB triplet for each prominent colour:
@@ -41,7 +41,7 @@ console.log(colours);
 ]
 ```
 
-`topHexColours` works the same, but instead of a RGB triplet it returns hex codes (with `#` included):
+`topHexColours` on the other hand returns hex codes (with `#` included):
 
 ```json
 [
