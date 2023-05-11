@@ -127,7 +127,7 @@ jobs:
         run: yarn config set supportedArchitectures.cpu "ia32"
         shell: bash
       - name: Install dependencies
-        run: yarn install --immutable --mode=skip-build
+        run: yarn install
       - name: Setup node x86
         uses: actions/setup-node@v3
         if: matrix.settings.target == 'i686-pc-windows-msvc'

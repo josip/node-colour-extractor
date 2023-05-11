@@ -45,21 +45,5 @@
     "universal": "napi universal",
     "version": "napi version"
   },
-  "packageManager": "yarn@3.5.1",
-  "optionalDependencies": {
-    "@colour-extractor/colour-extractor-win32-x64-msvc": "1.0.0",
-    "@colour-extractor/colour-extractor-darwin-x64": "1.0.0",
-    "@colour-extractor/colour-extractor-linux-x64-gnu": "1.0.0",
-    "@colour-extractor/colour-extractor-darwin-arm64": "1.0.0",
-    "@colour-extractor/colour-extractor-android-arm64": "1.0.0",
-    "@colour-extractor/colour-extractor-linux-arm64-gnu": "1.0.0",
-    "@colour-extractor/colour-extractor-linux-arm64-musl": "1.0.0",
-    "@colour-extractor/colour-extractor-win32-arm64-msvc": "1.0.0",
-    "@colour-extractor/colour-extractor-linux-arm-gnueabihf": "1.0.0",
-    "@colour-extractor/colour-extractor-linux-x64-musl": "1.0.0",
-    "@colour-extractor/colour-extractor-freebsd-x64": "1.0.0",
-    "@colour-extractor/colour-extractor-win32-ia32-msvc": "1.0.0",
-    "@colour-extractor/colour-extractor-android-arm-eabi": "1.0.0",
-    "@colour-extractor/colour-extractor-darwin-universal": "1.0.0"
-  }
+  "packageManager": "yarn@3.5.1"
 }
