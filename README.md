@@ -25,7 +25,7 @@ Note: This module contains native Rust libraries. Please open an issue if your p
 `colour-extractor` exports two functions:
 
 ```js
-const { topColours } = require('@colour-extractor/colour-extractor');
+const { topColours, topColoursHex } = require('@colour-extractor/colour-extractor');
 const colours = await topColours('./photos/cats/tigre.jpg');
 console.log(colours);
 // => [ [158, 64, 75], ... ]
@@ -44,25 +44,24 @@ console.log(colours);
 `topColoursHex` on the other hand returns hex codes (with `#` included):
 
 ```js
-const { topColoursHex } = require('@colour-extractor/colour-extractor');
-const colours = await topColoursHex('./photos/cats/tigre.jpg');
-console.log(colours);
+const hexColours = await topColoursHex('./photos/cats/tigre.jpg');
+console.log(hexColours);
 // => ["#2e4676", "#000002", "#0c2c0b"]
 ```
 
 ## Supported image formats
 
-All major image formats are supported, including PNG, JPG and WebP. Please see [image's readme](https://github.com/image-rs/image/blob/master/README.md#supported-image-formats) for a full list. Note that file extension is used for determening the image type.
+All major image formats are supported, including PNG, JPG and WebP. Please see [image-rs's documentation](https://github.com/image-rs/image/blob/master/README.md#supported-image-formats) for a full list. Note that file extension is used for determining the image type.
 
 ## How does it work?
 
 Here's the simplified algorithm:
 
-1. Image is scaled down to 48x48px with a fast nearest-neighbour algoritm.
-2. Colours are gruped into up to 16 clusters using [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering).
+1. Image is scaled down to 48x48px with a fast nearest-neighbour algorithm.
+2. Colours are grouped into up to 16 clusters using [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering).
 3. Identified clusters are further refined using [CIEDE2000 colour distance](https://en.wikipedia.org/wiki/Color_difference#CIEDE2000), removing any duplicates.
 
-## License
+## Licence
 
 colour-extractor is published under MIT license.
 
